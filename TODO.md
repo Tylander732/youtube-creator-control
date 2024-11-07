@@ -1,24 +1,27 @@
 # TODO
 
 ## Doing
-- Simple API for uploading contents to a server that can later be retreived
+- Login UI
+- File upload through UI
+
+## Upcoming
+- Youtube API connection
+- Write some unit tests for backend
 
 ## Backend
 - Authentication service
+    - Roll my own auth or use something like clerk?
+    - Login through google/youtube.
+        - Do I bother with login through email?
 - Database setup
     - Video file storage
         - NAS or other form of long term storage?
-        - Accessible by file path. Store path to file within DB to then retrieve file upon request?
-    - User information storage
+        - Add descriptions for media so it's clearer what the video is
     - Collaborators
 - External service authentication (youtube)
 
 ## UI
 - Login forms
-- Embedded video player
-    - Can something like this even be done with HTMX?
-    - HTML5 has a <video> element
-        - https://www.w3schools.com/html/html5_video.asp
 - Some type of feedback / messaging board between creators and editors?
 
 ## Chores
@@ -30,4 +33,7 @@
 - https://freshman.tech/file-upload-golang/
 
 ## Done
+- Simple API for uploading contents to a server that can later be retreived
 - User Creation
+- All files are going to be stored in a single location at this time. They're given UUIDs for unique file 
+- User information storage
