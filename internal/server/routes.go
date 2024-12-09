@@ -361,35 +361,3 @@ func Login() {}
 func Logout() {}
 
 func SanitizeUserInputs() {}
-
-////////// REFERENCE CODE //////////
-
-func (s *Server) UploadData(w http.ResponseWriter, r *http.Request) {
-	if r.Method != http.MethodPost {
-		http.Error(w, "Method not allowed", http.StatusMethodNotAllowed)
-		return
-	}
-
-	body, err := io.ReadAll(r.Body)
-	if err != nil {
-		http.Error(w, "Unable to read request body", http.StatusBadRequest)
-		return
-	}
-
-	// Close the request body once the processing has finished
-	defer r.Body.Close()
-
-	var data Request
-	if err := json.Unmarshal(body, &data); err != nil {
-		http.Error(w, "Invalid JSON", http.StatusBadRequest)
-		return
-	}
-
-	fmt.Printf("Recieved data: %+v\n", data)
-
-	w.Header().Set("Content-Type", "application/json")
-	w.WriteHeader(http.StatusOK)
-	if err := json.NewEncoder(w).Encode(data); err != nil {
-		http.Error(w, "Unable to encode response", http.StatusInternalServerError)
-	}
-}
