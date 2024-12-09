@@ -95,6 +95,10 @@ func (s *Server) newUserHandler(w http.ResponseWriter, r *http.Request) {
 		return
 	}
 
+	//TODO: Add email format validation
+	// Add some form of password strength check
+	// On front end, add two password fields when signing up to ensure user enters the same password
+
 	// Validate that all fields for addUser are present
 	err = ValidateStruct(addUser)
 	if err != nil {
@@ -350,6 +354,13 @@ func ValidateStruct(s interface{}) (err error) {
 
 	return err
 }
+
+//TODO: Finish funcs
+func Login() {}
+
+func Logout() {}
+
+func SanitizeUserInputs() {}
 
 ////////// REFERENCE CODE //////////
 
