@@ -205,7 +205,7 @@ func (s *Server) UploadMediaFile(w http.ResponseWriter, r *http.Request) {
 
 // TODO: Once there is a basic front end for authentication, how will I store the currently logged in user within the session state?
 func getLoggedInUser() string {
-	return "test@gmail.com"
+	return "john.doe@example.com"
 }
 
 /////////// GET Methods ///////////

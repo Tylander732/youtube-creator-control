@@ -10,7 +10,7 @@
 
 ## Backend
 - Authentication service
-    - Roll my own auth or use something like clerk?
+    - Roll my own authentication.
     - Login through google/youtube.
         - Do I bother with login through email?
 - Database setup
