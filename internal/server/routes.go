@@ -13,7 +13,7 @@ import (
 
 	// "github.com/a-h/templ"
 	"github.com/google/uuid"
-	"github.com/tylanderr/youtube-creator-control/cmd/web"
+	"github.com/tylanderr/youtube-creator-control/internal/web"
 	"github.com/tylanderr/youtube-creator-control/internal/database"
 	"github.com/tylanderr/youtube-creator-control/internal/structs"
 )

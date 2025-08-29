@@ -131,7 +131,6 @@ func (s *service) Close() error {
 
 // Write new user to database
 func (s *service) AddNewUser(addUser structs.AddUser) map[string]string {
-
 	status := make(map[string]string)
 
 	query := `INSERT INTO users (email, first_name, last_name) VALUES ($1, $2, $3)`

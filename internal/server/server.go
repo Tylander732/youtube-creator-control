@@ -7,14 +7,11 @@ import (
 	"strconv"
 	"time"
 
-	_ "github.com/joho/godotenv/autoload"
-
 	"github.com/tylanderr/youtube-creator-control/internal/database"
 )
 
 type Server struct {
 	port int
-
 	db database.Service
 }
 
