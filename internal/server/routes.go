@@ -13,7 +13,6 @@ import (
 
 	// "github.com/a-h/templ"
 	"github.com/google/uuid"
-	"github.com/tylanderr/youtube-creator-control/internal/web"
 	"github.com/tylanderr/youtube-creator-control/internal/database"
 	"github.com/tylanderr/youtube-creator-control/internal/structs"
 )
@@ -53,11 +52,6 @@ func (s *Server) RegisterRoutes() http.Handler {
 	mux.HandleFunc("GET /getUser", s.getUserHandler)
 	mux.HandleFunc("GET /files", s.getVideoIdList)
 	mux.HandleFunc("GET /downloadMedia", s.downloadVideoFile)
-
-	fileServer := http.FileServer(http.FS(web.Files))
-	mux.HandleFunc("/health", s.healthHandler)
-	mux.Handle("/assets/", fileServer)
-	mux.HandleFunc("/hello", web.HelloWebHandler)
 
 	return mux
 }
